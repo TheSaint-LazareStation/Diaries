@@ -1,0 +1,32 @@
+#!/bin/bash
+read -p "Please enter your name:" name
+echo "Hello $name, welcome."
+echo "What is the next sentence of \"迟迟钟鼓初长夜\"?"
+select var in "耿耿星河欲曙天" "脉脉星河欲曙天" "耿耿银河欲曙天" "耿耿银河曙欲天" "都不对" 
+do
+	case $var in
+		"耿耿星河欲曙天")
+			echo "Right! Cong!"
+			break;
+		;;
+		"脉脉星河欲曙天")
+			echo "You are wrong."
+			break;
+		;;
+		"耿耿银河欲曙天")
+			echo "You are wrong."
+			break;
+		;;
+		"耿耿银河曙欲天")
+			echo "You are wrong."
+			break;
+		;;
+		"都不对")
+			echo "You are wrong."
+			break;
+		;;
+		*)
+			echo "Wrong input."
+		;;
+	esac
+done
