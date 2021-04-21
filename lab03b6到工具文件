@@ -1,0 +1,32 @@
+#!/bin/bash
+
+i=0
+#change file name
+for tmp in `ls -l`
+do 
+	# 计算参数
+	if [ $i < 4 ];then
+		continue
+	else if [ $i < 10];then
+		n1=0
+		n2=$(($(($i-4))%9))
+		n3=0
+	else if [ $i < 11 ];then
+		n1=$(($(($i-10))%9))
+		n2=$(($(($i-4))%9))
+		n3=0
+	else
+		n1=$(($(($i-10))%9))
+		n2=$(($(($i-4))%9))
+		n3=$(($(($i-11))%9))
+	fi
+	i=$(($i+1))	# 更新循环变量
+#	if [ $n1 -eq 0 ];then
+#		owner=$tmp		#求出owner
+#		echo $owner
+#	else if [ $n2 -eq 0 ];then
+#		f=${tmp%.*}		#删掉最后一个.及其右边的字符,如果没有.,就返回原值
+#		s=${tmp##*.}		#删掉最后一个.及其左边的字符,如果没有.,就返回原值
+#		echo $f $s
+#	fi
+done
